@@ -1,2 +1,7 @@
 What happens when you initialize a repository? Why do you need to do it?
-The .git directory and all its subdirectories and files are initialized. So that the files and directories needed to track snapshots of the working directory are available and initialized.
+Answer: the .git directory and all its subdirectories and files are initialized. So that the files and directories needed to track snapshots of the working directory are available and initialized.
+
+How is the staging area different from the working directory and the repository? What value do you think it offers?
+Answer: This is a little misleading since the index sits inside the .git repository. At the very least there should a cleaner definition of terms. The staging area is used for selecting specific files to be added in a particular commit, making it easy to double-check that one is committing just the desired files. It can also act as a  snapshot of a file at the time of the "add", so for example when you are adding an object and have some of its methods working one can do add at that point. If additional methods create bugs you can still move forward by doing a commit and seeing what has changed. If everything goes smoothly you do another add once the object is complete and just one commit since all its methods are closely related.
+
+First part of the question: The repository represents all previous snapshots of the working directory, the working directory gives the complete current status of all working files, whereas the staging area represents snapshots of various files at the time they were added.
