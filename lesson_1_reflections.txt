@@ -1,0 +1,31 @@
+The ability to easily see the differences between files is essential once one is working on a project with many files. This facilitates finding bugs when multiple files have been changed. Differencing at the directory level is even more important to see what files have changed.
+
+
+
+
+How could having easy access to the entire history of a file make you a more efficient programmer in the long term?
+Answer: By making it easier to see what has changed in the code. Also it enables one to see what might have been deleted inadvertently or otherwise. Sometimes I delete some feature that in retrospect I realize that it has unseen usefulness and want to restore it. A full function difference editor such as Meld makes such deletions much easier to restore by simply clicking an arrow.
+
+What do you think are the pros and cons of manually choosing when to create a commit, like you do in Git, vs having versions automatically saved, like Google Docs does?
+Answer: It might be nice to have some intelligent, automated reminder that suggests it's time to do a new commit. Is there a way to difference what is currently in development vs the last commit? Doing more commits more often may help resolve merge conflicts when they occur. When working with others, how often should one upload the latest commit to the team development branch?
+
+With insufficient commits there is the possibility of work being lost if a machine should crash, or that when you do finally save bugs have been added which did not exist at some interim but unsaved version.
+
+Why do you think some version control systems, like Git, allow saving multiple files in one commit, while others, like Google Docs, treat each file separately?
+Answer: A system like Google Docs is handling files that are at most loosely connected to other files. Also since Google Docs is aimed at the "civilian" user Google doubtlessly decided to keep things simple. A history of a single file is obviously much easier to comprehend than that of full snapshots of a full repository.
+
+Conversely, Git and other version control systems are dealing with file repositories where most files are tightly coupled with other files due to application interfaces.
+
+How can you use the commands git log and git diff to view the history of files?
+Answer: one can search the output of git log for the commit of interest (note for a long history it might be more convenient to redirect the git log output to a temp file and then browse the temp file to search for a file of interest. I wonder what Git Gui does to help ease such searches), and then use git diff to compare files of interest. What happens when there are multiple files on a single commit?
+
+
+How might using version control make you more confident to make changes that could break something?
+Answer: Saving previous versions enables one to discern where the bug was first introduced or at least became visible. It is plausible that a bug might be lurking earlier on but had yet to bite. For example, so code might be introduced in an earlier commit but had yet deployed. Here cross-validating with a debugger could perhaps also help complete the picture.
+
+Now that you have your workspace set up, what do you want to try using Git for?
+Answer: First and foremost being an effective team development member, but I will also likely use it as a backup strategy when working on text files such as .tex, .py, .R files as well perhaps both locally and on github in private repos.
+
+I still need to understand the proper workflow dynamics when working with others on a code base.
+
+The past lesson is very useful in configuring gitbash to help keep the branch context in mind.

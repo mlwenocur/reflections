@@ -1,0 +1,2 @@
+What happens when you initialize a repository? Why do you need to do it?
+The .git directory and all its subdirectories and files are initialized. So that the files and directories needed to track snapshots of the working directory are available and initialized.
