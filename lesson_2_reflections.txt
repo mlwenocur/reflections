@@ -14,8 +14,20 @@ git diff --staged shows diffs between staging area and repo
 
 git reset --hard (resets staging area and working directory to equal committed values; USE WITH CAUTION)
 
+git checkout master (resets branch to master branch)
+
+git checkout -b newBranch (creates "newBranch" and then checks it out so that it becomes the active branch)
 
 How can you use the staging area to make sure you have one commit per logical change?
 Answer: One can use "git diff" to see what changes have been staged from the working directory, allowing one to see if all the unstaged files are irrelevant to the logical change inherent in the staging area. Conversely, by running "git diff --staged" enables one to see if the proposed commits in the staging area form a coherent logical change.
 
 One should stage and commit based on homogeneous character of proposed changes or committing to save a current testing and working set of files. Integrate, test, and upload religiously!
+
+What are some situations when branches would be helpful in keeping your history organized? How would branches help?
+Answer: Keeping track of tested milestones so that one can see the changes between milestones which might be useful in case of debugging or the need to backtrack. Though the master branch and an experimental branch that is merged with the master at each tested milestone would serve the same purpose. 
+
+Branching would also be useful when one wants to keep a record of when a set of changes are deemed deficient or lead to unexpected complexity but one may want or need to revisit them in the future.
+For example, git branch failed-homotopy_experiment. 
+
+How do the diagrams help you visualize the branch structure?
+Answer: One can see how the different branches changed from the grand-ancestor branch as each branch is updated with new commits.
