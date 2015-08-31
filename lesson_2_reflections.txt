@@ -5,3 +5,17 @@ How is the staging area different from the working directory and the repository?
 Answer: This is a little misleading since the index sits inside the .git repository. At the very least there should a cleaner definition of terms. The staging area is used for selecting specific files to be added in a particular commit, making it easy to double-check that one is committing just the desired files. It can also act as a  snapshot of a file at the time of the "add", so for example when you are adding an object and have some of its methods working one can do add at that point. If additional methods create bugs you can still move forward by doing a commit and seeing what has changed. If everything goes smoothly you do another add once the object is complete and just one commit since all its methods are closely related.
 
 First part of the question: The repository represents all previous snapshots of the working directory, the working directory gives the complete current status of all working files, whereas the staging area represents snapshots of various files at the time they were added.
+
+
+Useful commands:
+git diff (without arguments) shows diffs between working directory and staging area.
+
+git diff --staged shows diffs between staging area and repo
+
+git reset --hard (resets staging area and working directory to equal committed values; USE WITH CAUTION)
+
+
+How can you use the staging area to make sure you have one commit per logical change?
+Answer: One can use "git diff" to see what changes have been staged from the working directory, allowing one to see if all the unstaged files are irrelevant to the logical change inherent in the staging area. Conversely, by running "git diff --staged" enables one to see if the proposed commits in the staging area form a coherent logical change.
+
+One should stage and commit based on homogeneous character of proposed changes or committing to save a current testing and working set of files. Integrate, test, and upload religiously!
