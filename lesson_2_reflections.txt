@@ -18,6 +18,8 @@ git checkout master (resets branch to master branch)
 
 git checkout -b newBranch (creates "newBranch" and then checks it out so that it becomes the active branch)
 
+git log --graph --oneline a b (graphically shows how a and b diverged as new commits were made to their common ancestor)
+
 How can you use the staging area to make sure you have one commit per logical change?
 Answer: One can use "git diff" to see what changes have been staged from the working directory, allowing one to see if all the unstaged files are irrelevant to the logical change inherent in the staging area. Conversely, by running "git diff --staged" enables one to see if the proposed commits in the staging area form a coherent logical change.
 
@@ -31,3 +33,7 @@ For example, git branch failed-homotopy_experiment.
 
 How do the diagrams help you visualize the branch structure?
 Answer: One can see how the different branches changed from the grand-ancestor branch as each branch is updated with new commits.
+
+
+What is the result of merging two branches together? Why do we represent it in the diagram the way we do?
+Answer: A merge updates the current head to reflects all the commits made by the branches in the merge. Difficulties arise where commits conflict by the deletion of code or where a function say has been modified in two different ways. ... We present the merge diagram with branch that has been updated with merge as absorbing the partner branches.
