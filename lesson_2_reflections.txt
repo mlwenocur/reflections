@@ -37,3 +37,13 @@ Answer: One can see how the different branches changed from the grand-ancestor b
 
 What is the result of merging two branches together? Why do we represent it in the diagram the way we do?
 Answer: A merge updates the current head to reflects all the commits made by the branches in the merge. Difficulties arise where commits conflict by the deletion of code or where a function say has been modified in two different ways. ... We present the merge diagram with branch that has been updated with merge as absorbing the partner branches.
+
+What are the pros and cons of Git’s automatic merging vs. always doing merges manually?
+Answer: The pros are it save a lot of manual effort. The cons are it may hide some changes that will change the intended character of the program. For example, if two programmers each add a function that will control color rendering but put the color rendering calls in different places in the code then the colors will always render according to those of the second call, or perhaps the call is made twice when once will do:
+function(mywindow)
+{
+setColors(mywindow)
+old code
+setColors1(mywindow)
+}
+Perhaps both or does Git throw up its hands?
