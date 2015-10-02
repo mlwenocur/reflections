@@ -16,7 +16,23 @@ use one instead of another?
 What is the benefit of having a copy of the last known state of the remote
 stored locally?
 
-    Fill in your answer here
+    One can see how far the working repository has diverged from the remote. It may also help when planning the merge. For 
+	example, one may want to commit current changes and then checkout previous commits (perhaps creating a new branch say newMaster), merge those with origin/master and then move forward in this process by merging with next commit of the master until you get to last committed master branch. At that point checkout master and merge with newMaster.
+	
+	So for explicitness:
+	1) Commit changes to master.
+	2) Master -> m5 -> m4 -> m3 -> ...
+	3) git tag unMergedMaster (tag current master branch)
+	4) git checkout unMergedMaster~2
+	5) git checkout -b newMaster
+	6) git merge newMaster origin/master
+	7) git merge newMaster m4
+	8) git merge newMaster m5
+	9) git checkout master
+	10) git merge master newMaster
+	11) git push origin master
+	
+	Testing and resolving conflicts along the way.
 
 How would you collaborate without using Git or GitHub?  What would be easier,
 and what would be harder?
@@ -27,3 +43,14 @@ When would you want to make changes in a separate branch rather than directly in
 master?  What benefits does each approach have?
 
     Fill in your answer here
+
+	
+	
+SOME github notes:
+
+git fetch origin: create a new branch called origin/master
+git merge master origin/master: now try to merge master with origin/master (note master currently checkout)
+git fetch origin; git merge == git pull origin
+git add updatedFiles
+git commit -m "#"
+git push origin master: update remote with newly locally merged file.
