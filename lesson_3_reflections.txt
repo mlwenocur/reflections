@@ -42,7 +42,11 @@ and what would be harder?
 When would you want to make changes in a separate branch rather than directly in
 master?  What benefits does each approach have?
 
-    Fill in your answer here
+    A separate branch is worth the added complexity when one is trying a major experiment on the current code base. On the release side of the equation branching enables the orderly transition from alpha code to candidate code to release code. Another example may be when one is doing a major reorganization of what is otherwise working code for the purpose of improving maintainability or easing the addition of major new features.
+	
+	A separate branch on GitHub allows others perhaps to more easily see changes you are proposing. If they pull your code they are also less likely to unintentionally alter their own master branch.
+	
+	The advantage of staying on the master branch is its simplicity, especially for the work flow.
 
 	
 	
